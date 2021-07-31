@@ -1,8 +1,21 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native";
 
-const HomeScreen = () => {
-  return <Text style={styles.text}>HomeScreen</Text>;
+// destructured from (props.navigation) below. This cleans up onPress a little
+const HomeScreen = ( {navigation} ) => {
+  return (
+    <View>
+      <Text style={styles.text}>HomeScreen</Text> 
+      <Button 
+        title='Go to Components Demo' 
+        onPress={() => navigation.navigate('Components')}
+      />
+      <Button
+      title='Go to List Demo'  
+      onPress={() => navigation.navigate('List')}>
+      </Button>
+    </View>
+  )
 };
 
 const styles = StyleSheet.create({
